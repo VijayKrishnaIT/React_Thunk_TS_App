@@ -47,14 +47,30 @@ reducer.tsx
 
 ---
 
-5. create the store, deploy reducer with middleware , make the store availability to App component
+6. create the store, deploy reducer with middleware , make the store availability to App component
 
 index.tsx
 
-6. create the Component
+7. create the Component
 
 App.tsx
 
 Github URL
 
 https://github.com/VijayKrishnaIT/React_Thunk_TS_App
+
+---
+
+8. Insert and Update Record with Buttons
+
+# Insert
+
+      => props (define the prop)
+
+      => Create Component --> fire the prop
+
+      => Dispatch Action
+
+      => Subscribe Action
+
+      => Automatic Updation

@@ -17,7 +17,7 @@ export const fun_one = (records: any) => {
 /****************************************************************************/
 
 /***************************************************************************** */
-export const AddEmployee = (record: any) => {
+export const addEmployee = (record: any) => {
   return (dispatch: any) => {
     return axios.post(BASE_URL + "/insert", record).then((posRes) => {
       dispatch(fun_two(posRes.data));
@@ -45,7 +45,6 @@ export const fun_three = (result: any) => {
 
 /****************************************************************************** */
 export const deleteEmployee = (record: any) => {
-  
   return (dispatch: any) => {
     return axios.delete(BASE_URL + "/delete", record).then((posRes) => {
       posRes.data.my_record = record;

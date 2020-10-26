@@ -16,6 +16,7 @@ import MenuState from "./state/menu_state";
 import send from "./dispatch/dispatch";
 import receive from "./subscribe/subscribe";
 import MyTable from "./ui/tableHead";
+import Button from "@material-ui/core/Button";
 
 class App extends React.Component<AppProps, MenuState> {
   state: MenuState = {
@@ -51,10 +52,44 @@ class App extends React.Component<AppProps, MenuState> {
     console.log(record);
   };
 
+  insertRecord = (): any => {
+    this.props.addEmployee({
+      e_id: 4,
+      e_name: "Sam",
+      e_sal: 30000,
+      e_designation: "Senior Soft Eng",
+      dob: "2020-10-26",
+      contact: 9876543219,
+      e_habits: ["reading"],
+      e_department: "Software",
+      gender: "male",
+    });
+  };
+
+  updateRecord = (): any => {
+    this.props.updateEmployee({
+      e_id: 333,
+      e_sal: 800,
+      e_designation: "SSE",
+      contact: 99999,
+      e_dept: "Training",
+    });
+  };
+
   render() {
     return (
       <TableContainer component={Paper}>
-        <Table size="small">
+        <Button onClick={this.insertRecord} variant="contained" color="primary">
+          Insert
+        </Button>
+        <Button
+          onClick={this.updateRecord}
+          variant="outlined"
+          color="secondary"
+        >
+          Update
+        </Button>
+        <Table>
           <MyTable />
           <TableBody>
             {this.props.data.map((element, index) => (
